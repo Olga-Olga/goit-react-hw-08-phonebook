@@ -5,9 +5,11 @@ import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { StyledInput, StyledButton, StyledForm } from './ContactForm.styled';
 import { addContacts } from 'redux/operations';
+import { selectContacts } from 'redux/selector';
 
 export const ContactsForm = () => {
-  const mylist = useSelector(state => state.contacts.items);
+  // const mylist = useSelector(state => state.contacts.items);
+  const mylist = useSelector(selectContacts);
   const [name, setName] = useState('');
   const [number, setNumber] = useState('');
 
