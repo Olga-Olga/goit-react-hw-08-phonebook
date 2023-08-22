@@ -7,6 +7,14 @@ import { useDispatch, useSelector } from 'react-redux';
 import { fetchContacts } from 'redux/operations';
 import { FcSmartphoneTablet, FcFilledFilter, FcTodoList } from 'react-icons/fc';
 import { selectIsLoading } from 'redux/selector';
+import { Route, Routes } from 'react-router-dom';
+import { Home } from 'pages/Home';
+import { Register } from 'pages/Register';
+import { Layout } from './Layout';
+import { LoginForm } from 'pages/LoginForm';
+import NotFound from 'pages/NotFound';
+import { PublicRoute } from 'HOC/PrivateRoute';
+import { PrivateRoute } from 'HOC/PublicRoute';
 
 export const App = () => {
   const dispatch = useDispatch();
@@ -18,21 +26,68 @@ export const App = () => {
   }, [dispatch]);
 
   return (
-    <StyledDiv>
-      <StyledTitle>
-        Phonebook <FcSmartphoneTablet />
-      </StyledTitle>
-      <ContactsForm />
-      <StyledTitle>
-        Filter
-        <FcFilledFilter />
-      </StyledTitle>
-      <Filter />
-      <StyledTitle>
-        Contacts <FcTodoList />
-      </StyledTitle>
-      {!load ? <ContactList /> : <h1>Loading...</h1>}
-    </StyledDiv>
+    <Routes>
+      <Route path="/" element={<Layout />}>
+        <Route index element={<Home />} />
+
+        <Route
+          path="login"
+          element={
+            <PublicRoute>
+              <LoginForm />
+            </PublicRoute>
+          }
+        />
+
+        <Route
+          path="register"
+          element={
+            <PublicRoute>
+              <Register />
+            </PublicRoute>
+          }
+        />
+
+        <Route
+          path="todo"
+          element={
+            <PrivateRoute>
+              <StyledDiv>
+                <StyledTitle>
+                  Phonebook <FcSmartphoneTablet />
+                </StyledTitle>
+                <ContactsForm />
+                <StyledTitle>
+                  Filter
+                  <FcFilledFilter />
+                </StyledTitle>
+                <Filter />
+                <StyledTitle>
+                  Contacts <FcTodoList />
+                </StyledTitle>
+                {!load ? <ContactList /> : <h1>Loading...</h1>}
+              </StyledDiv>
+            </PrivateRoute>
+          }
+        />
+      </Route>
+      <Route path="*" element={<NotFound />} />
+      {/* <StyledDiv>
+        <StyledTitle>
+          Phonebook <FcSmartphoneTablet />
+        </StyledTitle>
+        <ContactsForm />
+        <StyledTitle>
+          Filter
+          <FcFilledFilter />
+        </StyledTitle>
+        <Filter />
+        <StyledTitle>
+          Contacts <FcTodoList />
+        </StyledTitle>
+        {!load ? <ContactList /> : <h1>Loading...</h1>}
+      </StyledDiv> */}
+    </Routes>
   );
 };
 

@@ -7,8 +7,9 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background: linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)),
-    url(../assets/fashioned-phone.jpg);
+  /* background: linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)),
+    url(../assets/fashioned-phone.jpg); */
+  background-color: rgb(216, 194, 248);
   background-size: cover;
 }
 
