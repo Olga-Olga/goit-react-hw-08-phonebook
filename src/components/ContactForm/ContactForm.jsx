@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 // import { nanoid } from 'nanoid';
 import { useDispatch, useSelector } from 'react-redux';
-import { toast, ToastContainer } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import { toast } from 'react-toastify';
+
 import { StyledInput, StyledButton, StyledForm } from './ContactForm.styled';
 import { addContacts } from 'redux/operations';
 import { selectContacts } from 'redux/selector';
@@ -67,7 +67,6 @@ export const ContactsForm = () => {
         required
       />
       <StyledButton>Add contact</StyledButton>
-      <ToastContainer />
     </StyledForm>
   );
 };

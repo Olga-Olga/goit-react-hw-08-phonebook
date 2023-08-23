@@ -32,7 +32,7 @@ const ContactList = () => {
             <div>{el.name}</div>
             <SlyledDotSeperator></SlyledDotSeperator>
             <StyleContact>
-              <div> {el.phone} </div>
+              <div> {el.number} </div>
               <button name="delete" onClick={() => onDelete(el.id)}>
                 Delete
               </button>
