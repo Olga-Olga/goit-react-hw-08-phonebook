@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 import { toast } from 'react-toastify';
@@ -12,14 +12,19 @@ import {
 import { styled } from 'styled-components';
 
 export const Navbar = () => {
+  const [isLoggingOut, setIsLoggingOut] = useState(false);
   const dispatch = useDispatch();
   // const logout = useSelector(isLogin);
 
   const handleLogout = () => {
+    setIsLoggingOut(true);
     dispatch(logoutThunk())
       .unwrap()
       .then(() => {
         toast.success('See you later!');
+      })
+      .finally(() => {
+        setIsLoggingOut(false); // Поверніть isLoggingOut назад в false
       });
   };
 
@@ -41,7 +46,9 @@ export const Navbar = () => {
       {isLogin ? (
         <div>
           <NavLinkStyled to="/contact">Contacts</NavLinkStyled>
-          <button onClick={handleLogout}>Logout</button>
+          <button onClick={handleLogout} disabled={isLoggingOut}>
+            Logout
+          </button>
         </div>
       ) : (
         <NavLinkStyled to="/register">Register</NavLinkStyled>
