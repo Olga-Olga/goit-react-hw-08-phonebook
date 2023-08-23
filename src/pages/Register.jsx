@@ -15,13 +15,19 @@ export const Register = () => {
   };
   return (
     <form onSubmit={handleSubmit}>
-      <input type="text" onChange={({ target: { value } }) => setName(value)} />
+      <input
+        type="text"
+        plaсeholder="Enter Name"
+        onChange={({ target: { value } }) => setName(value)}
+      />
       <input
         type="email"
+        plaсeholder="Enter email"
         onChange={({ target: { value } }) => setEmail(value)}
       />
       <input
         type="password"
+        plaсeholder="Enter password"
         onChange={({ target: { value } }) => setPassword(value)}
       />
       <button>Log In</button>
