@@ -7,7 +7,7 @@ import { useDispatch, useSelector } from 'react-redux';
 // import { fetchContacts } from 'redux/operations';
 // import { FcSmartphoneTablet, FcFilledFilter, FcTodoList } from 'react-icons/fc';
 // import { selectIsLoading, selectIsRefresh } from 'redux/selector';
-import { selectIsRefresh } from 'redux/selector';
+import { selectIsRefresh } from 'redux/Auth/authSelector';
 import { Route, Routes } from 'react-router-dom';
 import { Home } from 'pages/Home';
 import { Register } from 'pages/Register';
@@ -16,10 +16,9 @@ import { LoginForm } from 'pages/LoginForm';
 import NotFound from 'pages/NotFound';
 import { PublicRoute } from 'HOC/PublicRoute';
 import { PrivateRoute } from 'HOC/PrivateRoute';
-import { refreshThunk } from 'redux/authOperations';
+// import { refreshThunk } from 'redux/authOperations';
 import { ContactsPage } from 'pages/Contacts';
-// import { PublicRoute } from 'HOC/PrivateRoute';
-// import { PrivateRoute } from 'HOC/PublicRoute';
+import { refreshThunk } from 'redux/Auth/authOperations';
 
 export const App = () => {
   const dispatch = useDispatch();

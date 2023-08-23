@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { loginThunk } from 'redux/authOperations';
+import { loginThunk } from 'redux/Auth/authOperations';
+// import { loginThunk } from 'redux/authOperations';
 
 export const LoginForm = () => {
   const [email, setEmail] = useState('');

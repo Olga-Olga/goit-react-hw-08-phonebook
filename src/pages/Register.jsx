@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { regThunk } from 'redux/authOperations';
+import { regThunk } from 'redux/Auth/authOperations';
+// import { regThunk } from 'redux/authOperations';
 
 export const Register = () => {
   const [email, setEmail] = useState('');

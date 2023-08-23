@@ -1,6 +1,6 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
-import { filterChanges } from 'redux/slice';
+import { filterChanges } from 'redux/Contacts/slice';
 
 const Filter = ({ value, onChangeFilterValue }) => {
   const dispatch = useDispatch();

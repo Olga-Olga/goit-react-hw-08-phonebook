@@ -8,12 +8,6 @@ import { Navbar } from './Navbar';
 export const Layout = () => {
   return (
     <LayoutWrapper>
-      {/* <Header />
-      <WrapperOutlet>
-        <Suspense fallback={<h1>Loading</h1>}>
-          <Outlet />
-        </Suspense>
-      </WrapperOutlet> */}
       <Navbar />
       <Outlet />
     </LayoutWrapper>

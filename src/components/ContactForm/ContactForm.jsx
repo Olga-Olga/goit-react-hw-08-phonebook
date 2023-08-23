@@ -4,8 +4,11 @@ import { useDispatch, useSelector } from 'react-redux';
 import { toast } from 'react-toastify';
 
 import { StyledInput, StyledButton, StyledForm } from './ContactForm.styled';
-import { addContacts } from 'redux/operations';
-import { selectContacts } from 'redux/selector';
+// import { addContacts } from 'redux/operations';
+import { selectContacts } from 'redux/Contacts/selector';
+import { addContacts } from 'redux/Contacts/operations';
+// import { selectContacts } from 'redux/Contacts/selector';
+// import { selectContacts } from 'redux/Auth/authSelector';
 
 export const ContactsForm = () => {
   // const mylist = useSelector(state => state.contacts.items);

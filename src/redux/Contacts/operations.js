@@ -1,7 +1,8 @@
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { createAsyncThunk } from '@reduxjs/toolkit';
-import { API } from './authOperations';
+import { API } from 'redux/Auth/authOperations';
+// import { API } from './authOperations';
 // import axios from 'axios';
 // axios.defaults.baseURL = 'https://64de0163825d19d9bfb1dcf3.mockapi.io';
 

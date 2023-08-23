@@ -4,8 +4,10 @@ import Filter from 'components/Filter/Filter';
 import { useEffect } from 'react';
 import { FcFilledFilter, FcSmartphoneTablet, FcTodoList } from 'react-icons/fc';
 import { useDispatch, useSelector } from 'react-redux';
-import { fetchContacts } from 'redux/operations';
-import { selectIsLoading } from 'redux/selector';
+import { fetchContacts } from 'redux/Contacts/operations';
+import { selectIsLoading } from 'redux/Contacts/selector';
+// import { fetchContacts } from 'redux/operations';
+// import { selectIsLoading } from 'redux/Auth/authSelector';
 import { styled } from 'styled-components';
 
 export const ContactsPage = () => {

@@ -2,13 +2,14 @@ import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 import { toast } from 'react-toastify';
-import { logoutThunk } from 'redux/authOperations';
+import { logoutThunk } from 'redux/Auth/authOperations';
+// import { logoutThunk } from 'redux/authOperations';
 import {
   // selecIsRefresh,
   selectIsLoggedIn,
   // selectUserEmail,
   selectUserName,
-} from 'redux/selector';
+} from 'redux/Auth/authSelector';
 import { styled } from 'styled-components';
 
 export const Navbar = () => {
@@ -36,7 +37,7 @@ export const Navbar = () => {
   // console.log(isLogin);
 
   return (
-    <div>
+    <StyledWrapper>
       <NavLinkStyled to="/">Home</NavLinkStyled>
       {isLogin ? (
         <div>USER: {name}</div>
@@ -53,7 +54,7 @@ export const Navbar = () => {
       ) : (
         <NavLinkStyled to="/register">Register</NavLinkStyled>
       )}
-    </div>
+    </StyledWrapper>
   );
 };
 
@@ -61,8 +62,7 @@ const NavLinkStyled = styled(NavLink)`
   /* position: relative; */
   display: flex;
 `;
-// const LikedCounterStyled = styled.span`
-//   position: absolute;
-//   right: 50%;
-//   transform: translate(50%, -110%);
-// `;
+
+const StyledWrapper = styled.div`
+  display: flex;
+`;

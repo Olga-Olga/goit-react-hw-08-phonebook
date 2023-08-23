@@ -54,6 +54,9 @@ const slice = createSlice({
       })
       .addMatcher(isAnyOf(logoutThunk.pending), (state, action) => {
         state.isLoading = true;
+      })
+      .addMatcher(isAnyOf(loginThunk.rejected), (state, action) => {
+        state.isLoading = true;
       });
   },
 });
