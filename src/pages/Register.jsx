@@ -18,17 +18,17 @@ export const Register = () => {
     <form onSubmit={handleSubmit}>
       <input
         type="text"
-        plaсeholder="Enter Name"
+        placeholder="Enter Name"
         onChange={({ target: { value } }) => setName(value)}
       />
       <input
         type="email"
-        plaсeholder="Enter email"
+        placeholder="Enter email"
         onChange={({ target: { value } }) => setEmail(value)}
       />
       <input
         type="password"
-        plaсeholder="Enter password"
+        placeholder="Enter password"
         onChange={({ target: { value } }) => setPassword(value)}
       />
       <button>Log In</button>
