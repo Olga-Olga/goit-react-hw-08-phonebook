@@ -11,8 +11,7 @@ import { BrowserRouter } from 'react-router-dom';
 import { ToastContainer } from 'react-toastify';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-  <BrowserRouter>
-    {/* added baseline */}
+  <BrowserRouter basename="goit-react-hw-08-phonebook">
     <ThemeProvider theme={theme}>
       <Provider store={store}>
         <App />
