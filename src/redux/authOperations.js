@@ -52,6 +52,7 @@ export const logoutThunk = createAsyncThunk(
       return thunkAPI.rejectWithValue(error.message);
     }
   }
+  
 );
 
 export const refreshThunk = createAsyncThunk(

@@ -1,4 +1,5 @@
 import React from 'react';
+import { styled } from 'styled-components';
 // import { useDispatch } from 'react-redux';
 // import { toast } from 'react-toastify';
 // import { loginThunk} from 'redux/authOperations';
@@ -19,9 +20,16 @@ export const Home = () => {
 
   return (
     <>
-      <div>
-        <h1>HOME PAGE HERE</h1>
-      </div>
+      <StyledDiv>
+        <h1>I love js</h1>
+      </StyledDiv>
     </>
   );
 };
+
+const StyledDiv = styled.div`
+  flex: 1;
+  height: 1px;
+  background-color: grey;
+  margin-top: 20px;
+`;

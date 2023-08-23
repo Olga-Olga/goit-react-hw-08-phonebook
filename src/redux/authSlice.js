@@ -1,4 +1,4 @@
-import { createSlice } from '@reduxjs/toolkit';
+import { createSlice, isAnyOf } from '@reduxjs/toolkit';
 import {
   loginThunk,
   regThunk,
@@ -13,6 +13,7 @@ const slice = createSlice({
     token: '',
     isLogin: false,
     isRefresh: false,
+    isLoading: false,
   },
   extraReducers: builder => {
     builder
@@ -47,6 +48,12 @@ const slice = createSlice({
       })
       .addCase(refreshThunk.rejected, (state, { payload }) => {
         state.isRefresh = false;
+      })
+      .addMatcher(isAnyOf(logoutThunk.fulfilled), (state, action) => {
+        state.isLoading = false;
+      })
+      .addMatcher(isAnyOf(logoutThunk.pending), (state, action) => {
+        state.isLoading = true;
       });
   },
 });

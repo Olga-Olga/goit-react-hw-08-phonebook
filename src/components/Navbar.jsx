@@ -34,7 +34,7 @@ export const Navbar = () => {
     <div>
       <NavLinkStyled to="/">Home</NavLinkStyled>
       {isLogin ? (
-        <div>{name}</div>
+        <div>USER: {name}</div>
       ) : (
         <NavLinkStyled to="/login">Login</NavLinkStyled>
       )}
@@ -59,4 +59,3 @@ const NavLinkStyled = styled(NavLink)`
 //   right: 50%;
 //   transform: translate(50%, -110%);
 // `;
-

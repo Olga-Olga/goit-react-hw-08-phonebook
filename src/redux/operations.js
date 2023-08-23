@@ -14,14 +14,6 @@ export const fetchContacts = createAsyncThunk(
     } catch (error) {
       return thunkAPI.rejectWithValue(error.message);
     }
-  },
-  {
-    condition: (_, { getState }) => {
-      const isLoading = getState().loading;
-      if (isLoading) {
-        return false;
-      }
-    },
   }
 );
 
